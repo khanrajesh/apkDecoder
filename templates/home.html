@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APK Decoder</title>
+    <style>
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            display: none;
+            margin: auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+<h1>APK Decoder</h1>
+<div style="display: flex;">
+    <div>
+        <h2>Upload APK</h2>
+        <form id="uploadForm" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <label for="apk">Select an APK file:</label>
+            <input type="file" id="apk" name="apk" accept=".apk" required><br><br>
+            <input type="submit" value="Upload">
+        </form>
+        <div class="loader" id="uploadLoader"></div>
+
+        <h2>Search APK</h2>
+        <form id="searchForm" method="get">
+            <label for="package_name">Package Name:</label>
+            <input type="text" id="package_name" name="package_name" required><br><br>
+            <input type="submit" value="Search">
+        </form>
+        <div class="loader" id="searchLoader"></div>
+    </div>
+    <div id="apkDetails" style="margin-left: 20px;">
+        <!-- APK details will be displayed here -->
+    </div>
+</div>
+<script>
+    // Handle APK upload
+    document.getElementById('uploadForm').onsubmit = async function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        document.getElementById('uploadLoader').style.display = 'block'; // Show loader
+        document.getElementById('apkDetails').innerHTML = ''; // Clear previous details
+        const response = await fetch("{% url 'upload_apk' %}", {
+            method: 'POST',
+            body: formData
+        });
+        const data = await response.json();
+        document.getElementById('uploadLoader').style.display = 'none'; // Hide loader
+        if (response.ok) {
+            displayAPKDetails(data);
+        } else {
+            alert(data.error || 'An error occurred while uploading the APK.');
+        }
+    };
+
+    // Handle APK search
+    document.getElementById('searchForm').onsubmit = async function(event) {
+        event.preventDefault();
+        const packageName = document.getElementById('package_name').value;
+        document.getElementById('searchLoader').style.display = 'block'; // Show loader
+        document.getElementById('apkDetails').innerHTML = ''; // Clear previous details
+        const response = await fetch(`/apkmanager/apk-info/${packageName}/`);
+        const data = await response.json();
+        document.getElementById('searchLoader').style.display = 'none'; // Hide loader
+        if (response.ok) {
+            displayAPKDetails(data);
+        } else {
+            alert(data.error || 'An error occurred while searching for the APK.');
+        }
+    };
+
+    // Function to display APK details
+    function displayAPKDetails(data) {
+        document.getElementById('apkDetails').innerHTML = `
+                <h2>App Details</h2>
+                ${data.icon_base64 ? `<img src="data:image/png;base64,${data.icon_base64}" alt="App Icon" style="max-width: 100px;"><br>` : ''}
+                <strong>Package Name:</strong> ${data.package_name}<br>
+                <strong>Version Code:</strong> ${data.version_code}<br>
+                <strong>App Name:</strong> ${data.app_name}<br>
+                <strong>Version Name:</strong> ${data.version_name}<br>
+                <strong>App Size:</strong> ${data.app_size} KB<br>
+                <strong>Permissions:</strong>
+                <ul>
+                    ${data.permissions.map(permission => `<li>${permission}</li>`).join('')}
+                </ul>
+            `;
+    }
+</script>
+</body>
+</html>

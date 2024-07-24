@@ -1,0 +1,17 @@
+{
+    "package_name": "com.androidx.lazier",
+    "version_code": "1",
+    "app_name": "lazier",
+    "version_name": "1.0",
+    "permissions": [
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.WAKE_LOCK",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "com.androidx.lazier.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "android.permission.ACCESS_NETWORK_STATE"
+    ],
+    "app_size": 1221.7216796875,
+    "file_path": "apk\\com.androidx.lazier\\1\\app-release.apk",
+    "icon_base64": "AwAIACQCAAABABwAtAAAAAcAAAAAAAAAAAEAADgAAAAAAAAAAAAAAAsAAAAbAAAAJQAAADIAAAA/AAAAbAAAAAgIZHJhd2FibGUADQ1hZGFwdGl2ZS1pY29uAAcHYW5kcm9pZAAKCmJhY2tncm91bmQACgpmb3JlZ3JvdW5kACoqaHR0cDovL3NjaGVtYXMuYW5kcm9pZC5jb20vYXBrL3Jlcy9hbmRyb2lkAAoKbW9ub2Nocm9tZQAAAACAAQgADAAAAJkBAQEAARAAGAAAAAIAAAD/////AgAAAAUAAAACARAAJAAAAAIAAAD//////////wEAAAAUABQAAAAAAAAAAAACARAAOAAAAAMAAAD//////////wMAAAAUABQAAQAAAAAAAAAFAAAAAAAAAP////8IAAABHAAFfwMBEAAYAAAAAwAAAP//////////AwAAAAIBEAA4AAAABAAAAP//////////BAAAABQAFAABAAAAAAAAAAUAAAAAAAAA/////wgAAAEdAAV/AwEQABgAAAAEAAAA//////////8EAAAAAgEQADgAAAAFAAAA//////////8GAAAAFAAUAAEAAAAAAAAABQAAAAAAAAD/////CAAAAR0ABX8DARAAGAAAAAUAAAD//////////wYAAAADARAAGAAAAAIAAAD//////////wEAAAABARAAGAAAAAIAAAD/////AgAAAAUAAAA=",
+    "icon_path": "apk\\com.androidx.lazier\\1\\icon.png"
+}

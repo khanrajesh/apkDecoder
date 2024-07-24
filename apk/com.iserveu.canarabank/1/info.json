@@ -1,0 +1,29 @@
+{
+    "package_name": "com.iserveu.canarabank",
+    "version_code": "1",
+    "app_name": "Canara Bank",
+    "version_name": "1.0",
+    "permissions": [
+        "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE",
+        "android.permission.WAKE_LOCK",
+        "com.google.android.gms.permission.AD_ID",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.ACCESS_ADSERVICES_AD_ID",
+        "android.permission.REQUEST_INSTALL_PACKAGES",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "com.iserveu.canarabank.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_ADSERVICES_ATTRIBUTION",
+        "android.permission.REQUEST_DELETE_PACKAGES",
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_MEDIA_LOCATION",
+        "android.permission.READ_EXTERNAL_STORAGE"
+    ],
+    "app_size": 22921.076171875,
+    "file_path": "apk\\com.iserveu.canarabank\\1\\app-debug.apk",
+    "icon_base64": "AwAIACQCAAABABwAtAAAAAcAAAAAAAAAAAEAADgAAAAAAAAAAAAAAAsAAAAbAAAAJQAAADIAAAA/AAAAbAAAAAgIZHJhd2FibGUADQ1hZGFwdGl2ZS1pY29uAAcHYW5kcm9pZAAKCmJhY2tncm91bmQACgpmb3JlZ3JvdW5kACoqaHR0cDovL3NjaGVtYXMuYW5kcm9pZC5jb20vYXBrL3Jlcy9hbmRyb2lkAAoKbW9ub2Nocm9tZQAAAACAAQgADAAAAJkBAQEAARAAGAAAAAIAAAD/////AgAAAAUAAAACARAAJAAAAAIAAAD//////////wEAAAAUABQAAAAAAAAAAAACARAAOAAAAAMAAAD//////////wMAAAAUABQAAQAAAAAAAAAFAAAAAAAAAP////8IAAABuQAHfwMBEAAYAAAAAwAAAP//////////AwAAAAIBEAA4AAAABAAAAP//////////BAAAABQAFAABAAAAAAAAAAUAAAAAAAAA/////wgAAAG6AAd/AwEQABgAAAAEAAAA//////////8EAAAAAgEQADgAAAAFAAAA//////////8GAAAAFAAUAAEAAAAAAAAABQAAAAAAAAD/////CAAAAboAB38DARAAGAAAAAUAAAD//////////wYAAAADARAAGAAAAAIAAAD//////////wEAAAABARAAGAAAAAIAAAD/////AgAAAAUAAAA=",
+    "icon_path": "apk\\com.iserveu.canarabank\\1\\icon.png"
+}
