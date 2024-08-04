@@ -75,16 +75,23 @@ WSGI_APPLICATION = 'apkDecoder.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'App Distribution',
+#         'ENFORCE_SCHEMA': False,
+#         'CLIENT': {
+#             'host': 'mongodb+srv://chargingpointsev:chargingpointsev@cluster0.isizrxc.mongodb.net/',
+#         },
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'App Distribution',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': 'mongodb+srv://chargingpointsev:chargingpointsev@cluster0.isizrxc.mongodb.net/',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # BASE_DIR is typically defined as Path(__file__).resolve().parent.parent
     }
 }
+
 
 
 # Password validation

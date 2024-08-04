@@ -19,6 +19,6 @@ from django.urls import path, include
 from apkmanager.view import HomeView, WebView
 
 urlpatterns = [
-    path('home/', HomeView.as_view(), name='home'),
+    path('', HomeView.as_view(), name='home'),
     path('web/', WebView.as_view(), name='web'),
     path('apkmanager/', include('apkmanager.urls')),]
